@@ -7,23 +7,11 @@ class UserController extends CI_Controller{
         $this->load->view('user/index');
     }
 
-    public function about(){
-        $this->load->view('user/about');
+    public function category(){
+        $this->load->view('user/category');
     }
 
     public function contact(){
         $this->load->view('user/contact');
     }
-
-    public function settings(){
-        $this->load->view('user/settings');
-    }
-
-    // http://localhost/dailynews/
-    // http://localhost/dailynews/index.php/UserController/index
-
-    // http://localhost/dailynews/index.php/UserController/index
-    // http://localhost/dailynews/UserController/index
-
-    //http://localhost/dailynews/azima
 }

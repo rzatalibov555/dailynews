@@ -14,4 +14,8 @@ class UserController extends CI_Controller{
     public function contact(){
         $this->load->view('user/contact');
     }
+
+    public function single(){
+        $this->load->view('user/single');
+    }
 }

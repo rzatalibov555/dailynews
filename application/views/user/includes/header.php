@@ -46,7 +46,7 @@
         </div>
         <div class="row align-items-center bg-white py-3 px-lg-5">
             <div class="col-lg-4">
-                <a href="index.html" class="navbar-brand p-0 d-none d-lg-block">
+                <a href="<?php echo base_url('index'); ?>" class="navbar-brand p-0 d-none d-lg-block">
                     <h1 class="m-0 display-4 text-uppercase text-primary">Biz<span class="text-secondary font-weight-normal">News</span></h1>
                 </a>
             </div>
@@ -71,7 +71,7 @@
                 <div class="navbar-nav mr-auto py-0">
                     <a href="<?php echo base_url('index'); ?>" class="nav-item nav-link active">Home</a>
                     <a href="<?php echo base_url('category'); ?>" class="nav-item nav-link">Category</a>
-                    <a href="single.html" class="nav-item nav-link">Single News</a>
+                    <a href="<?php echo base_url('single'); ?>" class="nav-item nav-link">Single News</a>
                     <!-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
                         <div class="dropdown-menu rounded-0 m-0">

@@ -57,5 +57,12 @@ $route['single']    = 'UserController/single';
 
 
 
+// ADMIN
+$route['a_login']        = 'AdminController/index';
+$route['a_dashboard']    = 'AdminController/dashboard';
+$route['a_news_list']    = 'AdminController/news_list';
+$route['a_news_create']  = 'AdminController/news_create';
+
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

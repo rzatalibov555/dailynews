@@ -17,7 +17,7 @@
 
                                 <!-- ------------------------------------- -->
 
-                                <form action="index.php" method="get">
+                                <form action="<?php echo base_url('a_news_create_act'); ?>" method="post">
 
                                     <label for="title">Title</label>
                                     <input name="title" type="text" id="title" class="form-control" placeholder="Enter title">
@@ -80,3 +80,7 @@
 
 <?php $this->load->view('admin/includes/footer'); ?>
 <?php $this->load->view('admin/includes/footerScript'); ?>
+
+
+
+

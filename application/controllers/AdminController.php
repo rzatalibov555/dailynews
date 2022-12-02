@@ -20,15 +20,20 @@ class AdminController extends CI_Controller{
 
 
     public function news_create_act(){
-        $title = $_POST['title'];
-        $descr = $_POST['description'];
-        $date = $_POST['date'];
-        $category = $_POST['category'];
-        $status = $_POST['status'];
-        
 
+        // STEP1 = get all input names
+
+        $title      = $_POST['title'];
+        $descr      = $_POST['description'];
+        $date       = $_POST['date'];
+        $category   = $_POST['category'];
+        $status     = $_POST['status'];
+        
+        // STEP2 = check input names value
         if(!empty($title) && !empty($descr) && !empty($date) && !empty($category) && !empty($status)){
 
+
+            // STEP3 = push all input values in array
             $data = [
                 'n_title'       => $title,
                 'n_description' => $descr,
@@ -37,8 +42,11 @@ class AdminController extends CI_Controller{
                 'n_status'      => $status,
                 'n_create_date' => date("Y-m-d H:i:s"),
             ];
-    
+            
+            // STEP4 = insert values to database
             $this->db->insert('news', $data);
+
+            // STEP5 = redirect pago to list method
             redirect(base_url('a_news_list'));
 
         }else{

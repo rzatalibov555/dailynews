@@ -10,8 +10,23 @@ class AdminController extends CI_Controller{
         $this->load->view('admin/index');
     }
 
+    // result_array()   - 1den cox melumatin gelmesi ucundur (array kimi)     []
+    // row_array()      - yalniz 1 setirin getirilmesi ucundur (array kimi)   []
+
+    // result()         - 1den cox melumatin gelmesi ucundur (object kimi)    ->
+    // row()            - yalniz 1 setirin getirilmesi ucundur (object kimi)  ->
+
+
+
     public function news_list(){
-        $this->load->view('admin/news/list');
+        $data["get_all"] = $this->db->order_by('n_id','DESC')->get("news")->result();
+
+        // echo "controllerden gelen";
+        // print_r('<pre>');
+        // print_r($data["get_all"]);
+        // die();
+
+        $this->load->view('admin/news/list',$data);
     }
 
     public function news_create(){
@@ -94,3 +109,8 @@ class AdminController extends CI_Controller{
 
 
 }
+
+
+
+
+

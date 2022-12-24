@@ -10,6 +10,7 @@ class AdminController extends CI_Controller{
         $this->load->view('admin/index');
     }
 
+
     // result_array()   - 1den cox melumatin gelmesi ucundur (array kimi)     []
     // row_array()      - yalniz 1 setirin getirilmesi ucundur (array kimi)   []
 
@@ -105,6 +106,26 @@ class AdminController extends CI_Controller{
             redirect($_SERVER['HTTP_REFERER']);
         }
 
+    }
+
+  
+    public function delete_news($id){
+
+        $this->db->where('n_id', $id)->delete('news');
+        redirect(base_url('a_news_list'));
+
+    }
+
+
+    public function update_news($id){
+
+        // bu function id-sine gore lazimi secilmiw xeberin ayrica getirilmesi ucundur.
+        $data['single_news'] = $this->db->where('n_id',$id)->get('news')->row();
+        $this->load->view('admin/news/edit',$data);
+    }
+
+    public function update_newsAct($id){
+        echo $id;
     }
 
 

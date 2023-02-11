@@ -35,11 +35,11 @@
                                             <tbody>
 
                                                 
-                                                <?php foreach ($get_all as $items) { ?>
+                                                <?php $sira = 0; foreach ($get_all as $items) { $sira++; ?>
 
                                     
                                                     <tr>
-                                                        <td><?php echo $items->n_id; ?></td>
+                                                        <td><?php echo $sira; ?></td>
                                                         <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong><?php echo $items->n_title; ?></strong></td>
                                                         <td><?php echo $items->n_description; ?></td>
                                                         <td><?php echo $items->n_category; ?></td>
@@ -62,6 +62,13 @@
                                                             
                                                         </td>
                                                         <td>
+
+                                                            <a href="">
+                                                                <button type="button" class="btn btn-info btn-sm">
+                                                                    <i class="bx bx-search"></i>
+                                                                </button>
+                                                            </a>
+
                                                             <a href="<?php echo base_url('a_news_update/'.$items->n_id); ?>">
                                                                 <button type="button" class="btn btn-warning btn-sm">
                                                                     <i class="bx bx-edit-alt"></i>

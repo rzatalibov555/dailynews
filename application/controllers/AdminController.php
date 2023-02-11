@@ -209,7 +209,11 @@ class AdminController extends CI_Controller{
     }
 
 
-    
+    public function view_news($id){
+        $data['single_news'] = $this->db->where('n_id',$id)->get('news')->row_array();
+        $this->load->view('admin/news/detail',$data);
+
+    }
 
 
 }

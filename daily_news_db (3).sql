@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2023 at 12:55 PM
+-- Generation Time: Feb 16, 2023 at 04:32 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -30,12 +30,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `a_id` int(11) NOT NULL,
   `a_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `a_username` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `a_username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `a_password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `a_email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `a_status` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `a_img` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`a_id`, `a_name`, `a_username`, `a_password`, `a_email`, `a_status`, `a_img`) VALUES
+(1, 'Revan', 'cool_revan', '202cb962ac59075b964b07152d234b70', 'revan@gmail.com', 'Active', 's.jpg'),
+(2, 'Sema', 'esma', '827ccb0eea8a706c4c34a16891f84e7b', 'esma@gmail.com', 'Active', '2.jpg');
 
 -- --------------------------------------------------------
 
@@ -94,23 +102,13 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
   MODIFY `n_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `admin`
---
-ALTER TABLE `admin`
-  ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`a_id`) REFERENCES `news` (`n_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -54,7 +54,7 @@
                                                                     <source src="<?php echo base_url('uploads/news/') . $items->n_file; ?>" type="audio/mpeg">
                                                                 </audio>
                                                             <?php } else { ?>
-                                                                <img  width="210" src="<?php echo base_url('uploads/news/') . $items->n_file; ?>" alt="">
+                                                                <img  width="100" height="100" style="object-fit:cover;" src="<?php echo base_url('uploads/news/') . $items->n_file; ?>" alt="">
                                                             <?php } ?>
                                                            
                                                         </td>

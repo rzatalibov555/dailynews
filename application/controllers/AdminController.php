@@ -13,7 +13,6 @@ class AdminController extends CI_Controller{
         $this->load->view('admin/auth-login-basic');
     }
 
-
     public function loginAct(){
         
 
@@ -82,10 +81,11 @@ class AdminController extends CI_Controller{
         $this->session->set_flashdata('success',"Sizi bir daha gözləyəcəyik :)");
         redirect(base_url('a_login'));
     }
-    
 
     public function dashboard(){
-        $this->load->view('admin/index');
+        $data['admin'] = $this->db->select('a_id, a_name, a_username, a_email, a_status, a_img')->where('a_id', $_SESSION['admin_id'])->get('admin')->row_array();
+      
+        $this->load->view('admin/index',$data);
     }
 
 
@@ -98,20 +98,14 @@ class AdminController extends CI_Controller{
 
 
     public function news_list(){
-        $data["get_all"] = $this->db->order_by('n_id','DESC')->get("news")->result();
-
-        // echo "controllerden gelen";
-        // print_r('<pre>');
-        // print_r($data["get_all"]);
-        // die();
-
+        $data["get_all"] = $this->db->where('n_creator_id', $_SESSION['admin_id'])->order_by('n_id','DESC')->get("news")->result();
         $this->load->view('admin/news/list',$data);
     }
 
     public function news_create(){
+        
         $this->load->view('admin/news/create');
     }
-
 
     public function news_create_act(){
 
@@ -151,6 +145,7 @@ class AdminController extends CI_Controller{
                     'n_status'      => $status,
                     'n_file'        => $upload_name,
                     'n_file_ext'    => $upload_ext,
+                    'n_creator_id'  => $_SESSION['admin_id'],
                     'n_create_date' => date("Y-m-d H:i:s"),
                 ];
                 
@@ -170,6 +165,7 @@ class AdminController extends CI_Controller{
                     'n_status'      => $status,
                     // 'n_file'        => $upload_name,
                     // 'n_file_ext'    => $upload_ext,
+                    'n_creator_id'  => $_SESSION['admin_id'],
                     'n_create_date' => date("Y-m-d H:i:s"),
                 ];
                 
@@ -186,14 +182,12 @@ class AdminController extends CI_Controller{
 
     }
 
-  
     public function delete_news($id){
 
         $this->db->where('n_id', $id)->delete('news');
         redirect(base_url('a_news_list'));
 
     }
-
 
     public function update_news($id){
 
@@ -248,7 +242,7 @@ class AdminController extends CI_Controller{
                     'n_status'      => $status,
                     'n_file'        => $upload_name,
                     'n_file_ext'    => $upload_ext,
-                    // 'n_updater_id'  => ,
+                    'n_updater_id'  => $_SESSION['admin_id'],
                     'n_update_date' => date("Y-m-d H:i:s"),
                 ];
                 
@@ -268,6 +262,7 @@ class AdminController extends CI_Controller{
                     'n_status'      => $status,
                     // 'n_file'        => $upload_name,
                     // 'n_file_ext'    => $upload_ext,
+                    'n_updater_id'  => $_SESSION['admin_id'],
                     'n_create_date' => date("Y-m-d H:i:s"),
                 ];
                 
@@ -285,7 +280,6 @@ class AdminController extends CI_Controller{
 
 
     }
-
 
     public function view_news($id){
         $data['single_news'] = $this->db->where('n_id',$id)->get('news')->row_array();

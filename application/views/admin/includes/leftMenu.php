@@ -60,7 +60,7 @@
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-table"></i>
-                <div data-i18n="Layouts">News <?php echo $_SESSION['admin_id']; ?></div>
+                <div data-i18n="Layouts">News</div>
             </a>
 
             <ul class="menu-sub">

@@ -9,6 +9,8 @@
         float: left;
     }
 </style>
+
+
 <div class="content-wrapper">
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="row">
@@ -40,11 +42,10 @@
                                     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 fLeft mt-2 me-2">
                                         <label for="category">Category</label>
                                         <select name="category" id="category" class="form-control">
-                                            <option <?php if($single_news->n_category == ""){ echo "SELECTED"; } ?> value="">-SELECT-</option>
-                                            <option <?php if($single_news->n_category == "Sport"){ echo "SELECTED"; } ?> value="Sport">Sport</option>
-                                            <option <?php if($single_news->n_category == "Finance"){ echo "SELECTED"; } ?> value="Finance">Finance</option>
-                                            <option <?php if($single_news->n_category == "Education"){ echo "SELECTED"; } ?> value="Education">Education</option>
-                                            <option <?php if($single_news->n_category == "Technology"){ echo "SELECTED"; } ?> value="Technology">Technology</option>
+                                            <option value="">-SELECT-</option>
+                                            <?php foreach ($category as $item){ ?>
+                                                <option <?php if($single_news->n_category == $item['c_id']){ echo "SELECTED"; } ?> value="<?php echo $item['c_id']; ?>"><?php echo $item['c_name']; ?></option>
+                                            <?php } ?>
                                         </select>
                                     </div>
 

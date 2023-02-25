@@ -48,7 +48,7 @@
                                         </tr>
                                         <tr>
                                             <td>Category</td>
-                                            <td><?php echo $single_news['n_category']; ?></td>
+                                            <td><?php echo $single_news['c_name']; ?></td>
                                         </tr>
                                         <tr>
                                             <td>Status</td>

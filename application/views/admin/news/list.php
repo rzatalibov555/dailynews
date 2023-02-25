@@ -10,7 +10,7 @@
                     <div class="d-flex align-items-end row">
                         <div class="col-sm-12">
                             <div class="card">
-                                <h5 class="card-header">Bordered Table
+                                <h5 class="card-header">News list
                                     <a href="<?php echo base_url('a_news_create'); ?>">
                                         <button type="button" class="btn btn-success" style="float: right;">Create</button>
                                     </a>
@@ -24,7 +24,7 @@
                                                 <tr>
                                                     <th>#</th>
                                                     <th>Title</th>
-                                                    <th>Description</th>
+<!--                                                    <th>Description</th>-->
                                                     <th>Category</th>
                                                     <th>Date</th>
                                                     <th>Image</th>
@@ -43,8 +43,8 @@
                                                     <tr>
                                                         <td><?php echo $sira; ?></td>
                                                         <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong><?php echo $items->n_title; ?></strong></td>
-                                                        <td><?php echo $items->n_description; ?></td>
-                                                        <td><?php echo $items->n_category; ?></td>
+<!--                                                        <td>--><?php //echo $items->n_description; ?><!--</td>-->
+                                                        <td><?php echo $items->c_name; ?></td>
                                                         <td>
                                                             <?php echo date("d-m-Y H:i", strtotime($items->n_date)); ?>
                                                         </td>

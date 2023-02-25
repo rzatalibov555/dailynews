@@ -6,6 +6,8 @@
         float: left;
     }
 </style>
+
+
 <div class="content-wrapper">
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="row">
@@ -34,11 +36,14 @@
                                     <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 fLeft mt-2 me-2">
                                         <label for="category">Category</label>
                                         <select name="category" id="category" class="form-control">
+
                                             <option value="">-SELECT-</option>
-                                            <option value="Sport">Sport</option>
-                                            <option value="Finance">Finance</option>
-                                            <option value="Education">Education</option>
-                                            <option value="Technology">Technology</option>
+
+                                            <?php
+                                            foreach ($category as $item) { ?>
+                                                <option value="<?php echo $item['c_id']; ?>"><?php echo $item['c_name']; ?></option>
+                                            <?php } ?>
+
                                         </select>
                                     </div>
 

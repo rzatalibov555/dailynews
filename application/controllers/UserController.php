@@ -5,9 +5,22 @@ class UserController extends CI_Controller{
     public function index(){
         $data['slider_left_side'] = $this->db
             ->limit(10)
-            ->order_by('n_id','DESC')
+            ->order_by('n_date','DESC')
             ->join('category', 'category.c_id = news.n_category','left')
             ->get('news')->result_array();
+
+
+       
+
+
+        $data['slider_left_side_next'] = $this->db
+            ->limit(10,10)
+            ->order_by('n_date','DESC')
+            
+            ->join('category', 'category.c_id = news.n_category','left')
+            ->join('admin', 'admin.a_id = news.n_creator_id','left')
+            ->get('news')->result_array();
+         
 
         $data['idman'] = $this->db
             ->where('n_category', '1')
@@ -34,9 +47,9 @@ class UserController extends CI_Controller{
             ->get('news')->row_array();
 
 
-//        print_r('<pre>');
-//        print_r($data['texnologiya']);
-//        die();
+    //    print_r('<pre>');
+    //    print_r($data['slider_left_side_next']);
+    //    die();
 
         $this->load->view('user/index',$data);
     }

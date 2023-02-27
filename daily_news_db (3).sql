@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 25, 2023 at 01:15 PM
+-- Generation Time: Feb 27, 2023 at 09:58 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -107,7 +107,9 @@ INSERT INTO `news` (`n_id`, `n_title`, `n_description`, `n_date`, `n_category`, 
 (43, 'Aİ Komissiyası “TikTok”u işçilərinə qadağan edib', 'Avropa İttifaqı (Aİ) Komissiyası işçilərinə təhlükəsizlik səbəbilə şəxsi və korporativ telefonlarında “TikTok” tətbiqindən istifadəni qadağan edib.\r\n\r\nBu kontekstdə Komissiyanın bütün əməkdaşlarına səhər saatlarında tətbiqi şəxsi və ya korporativ cihazlarından silmək tapşırılıb.\r\n\r\nAİ-nin digər qurumları olan Avropa İttifaqı Şurası və Avropa Parlamentinin də yaxın gələcəkdə oxşar addımlar atacağı gözlənilir.\r\n\r\nÇin texnologiya firmasına məxsus “TikTok” bəzi ölkələrdə milli təhlükəsizlik narahatlığına səbəb olur.', '2023-02-20T14:10', '4', 'Active', '13.jpg', '.jpg', 1, '2023-02-25 14:10:19', '', ''),
 (44, 'Martın 1-dən “WhatsApp”sız qalacaq telefonların adları AÇIQLANDI', '“WhatsApp” dünyada ən çox istifadə olunan tətbiqlərdən biridir. O, hər kəslə ünsiyyət qurmağa, sənəd, foto, video və s. göndərməyə imkan verir.\r\n\r\nBununla belə, martın 1-dən etibarən kütləvi şəkildə işə salınacaq  yeniləmə ilə “WhatsApp” bir sıra Android smartfonlarında, xüsusən də köhnə modellərdə fəaliyyətini dayandıracaq.\r\n\r\n“Meta”ya məxsus proqram sizin həmişəki kimi mesajları qəbul etməyə davam edə biləcəyinizi bildirsə də, ola bilər ki, günlərin birində siz artıq zənglərdən istifadə edə və ya sadəcə olaraq ehtiyat nüsxənizi bərpa edə bilməyəcəksiniz.', '2023-02-22T14:11', '4', 'Active', '14.jpg', '.jpg', 1, '2023-02-25 14:11:45', '', ''),
 (45, 'lqar Musayev: “Kiberhücumların əsas məqsədi bir çox hallarda qonşularımıza işarə edir”', 'Azərbaycan Respublikasının Xüsusi Rabitə və İnformasiya Təhlükəsizliyi Dövlət Xidmətinin rəisi, İnformasiya Təhlükəsizliyi üzrə Koordinasiya Komissiyasının sədri, general-leytenant İlqar Musayev “Report” İnformasiya Agentliyinə müsahibə verib.\r\n\r\nO, müsahibəsi zamanı ölkəmizdə informasiya təhlükəsizliyi və kibercinayətkarlığa qarşı mübarizə sahəsində görülən işlər, Azərbaycanın bu sahədə digər ölkələrlə əməkdaşlığı və aidiyyəti digər məsələlərlə bağlı fikirlərini bölüşüb.', '2023-02-24T14:12', '4', 'Active', '15.jpg', '.jpg', 1, '2023-02-25 14:12:32', '', ''),
-(47, 'Azərbaycan ilk dəfə NASA-nın dəstəyi ilə keçirilən robot müsabiqəsində təmsil olunacaq', 'Azərbaycanın ilk robototexnika komandası bu ilin aprel ayında NASA-nın sponsoru olduğu beynəlxalq robot müsabiqəsində iştirak edəcək.\r\n\r\nAPA xəbər verir ki, 14-18 yaşlı məktəblilərdən ibarət 26 nəfərlik komanda beynəlxalq FRC (First Robotics Compotition) müsabiqəsində hazırladığı robotları təqdim edəcək.\r\n\r\nRobotun detalları, elektron hissələri, proqramlaşdırma, dizayn və digər işlər komandanın müəllim və tələbə heyəti tərəfindən görülüb.', '2023-02-21T15:11', '4', 'Active', '16.jpg', '.jpg', 1, '2023-02-25 15:11:16', '', '');
+(47, 'Azərbaycan ilk dəfə NASA-nın dəstəyi ilə keçirilən robot müsabiqəsində təmsil olunacaq', 'Azərbaycanın ilk robototexnika komandası bu ilin aprel ayında NASA-nın sponsoru olduğu beynəlxalq robot müsabiqəsində iştirak edəcək.\r\n\r\nAPA xəbər verir ki, 14-18 yaşlı məktəblilərdən ibarət 26 nəfərlik komanda beynəlxalq FRC (First Robotics Compotition) müsabiqəsində hazırladığı robotları təqdim edəcək.\r\n\r\nRobotun detalları, elektron hissələri, proqramlaşdırma, dizayn və digər işlər komandanın müəllim və tələbə heyəti tərəfindən görülüb.', '2023-02-21T15:11', '4', 'Active', '16.jpg', '.jpg', 1, '2023-02-25 15:11:16', '', ''),
+(48, 'asd', 'sdsadasd', '2023-02-27T21:36', '1', 'Active', '101.jpg', '.jpg', 2, '2023-02-26 21:36:48', '', ''),
+(49, 'alooo', 'necesen?', '2023-02-08T19:08', '1', 'Active', 'IMG_2688_новый_размер.JPG', '.JPG', 2, '2023-02-28 19:09:18', '2', '');
 
 --
 -- Indexes for dumped tables
@@ -151,7 +153,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `n_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `n_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

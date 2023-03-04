@@ -53,7 +53,8 @@ $route['default_controller'] = 'UserController';
 $route['index']     = 'UserController/index';
 $route['category']  = 'UserController/category';
 $route['contact']   = 'UserController/contact';
-$route['single']    = 'UserController/single';
+$route['single/(.*)']    = 'UserController/single/$1';
+$route['send_message'] = 'UserController/send_message';
 
 
 

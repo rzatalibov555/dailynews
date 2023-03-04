@@ -22,7 +22,7 @@
                                     href=""><?php echo date("d-m-Y", strtotime($left_slider['n_date'])); ?></a>
                             </div>
                             <a class="h2 m-0 text-white text-uppercase font-weight-bold"
-                                href=""><?php echo $left_slider['n_title']; ?></a>
+                                href="<?php echo base_url('single/'.$left_slider['n_id']); ?>"><?php echo $left_slider['n_title']; ?></a>
                         </div>
                     </div>
                     <?php } ?>
@@ -46,7 +46,7 @@
                                         href=""><small><?php echo date("M d, Y", strtotime($idman['n_date'])); ?></small></a>
                                 </div>
                                 <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold"
-                                    href=""><?php echo $idman['n_title']; ?></a>
+                                    href="<?php echo base_url('single/'.$idman['n_id']); ?>"><?php echo $idman['n_title']; ?></a>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                                         href=""><small><?php echo date("M d, Y", strtotime($medeniyyet['n_date'])); ?></small></a>
                                 </div>
                                 <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold"
-                                    href=""><?php echo $medeniyyet['n_title']; ?></a>
+                                    href="<?php echo base_url('single/'.$medeniyyet['n_id']); ?>"><?php echo $medeniyyet['n_title']; ?></a>
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                                         href=""><small><?php echo date("M d, Y", strtotime($biznes['n_date'])); ?></small></a>
                                 </div>
                                 <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold"
-                                    href=""><?php echo $biznes['n_title']; ?></a>
+                                    href="<?php echo base_url('single/'.$biznes['n_id']); ?>"><?php echo $biznes['n_title']; ?></a>
                             </div>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
                                         href=""><small><?php echo date("M d, Y", strtotime($texnologiya['n_date'])); ?></small></a>
                                 </div>
                                 <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold"
-                                    href=""><?php echo $texnologiya['n_title']; ?></a>
+                                    href="<?php echo base_url('single/'.$texnologiya['n_id']); ?>"><?php echo $texnologiya['n_title']; ?></a>
                             </div>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
 
                             <?php foreach($slider_left_side as $item){ ?>
                             <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold"
-                                    href=""><?php echo $item['n_title']; ?></a></div>
+                                    href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo $item['n_title']; ?></a></div>
                             <?php } ?>
 
                         </div>
@@ -154,7 +154,7 @@
                                 href=""><small><?php echo date("M d, Y", strtotime($item['n_date'])); ?></small></a>
                         </div>
                         <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold"
-                            href=""><?php echo $item['n_title']; ?></a>
+                            href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo $item['n_title']; ?></a>
                     </div>
                 </div>
 
@@ -199,11 +199,11 @@
 
                                         <?php if (strlen($item['n_title']) > 60) { ?>
                                             <a class="h6 d-block mb-3 text-secondary text-uppercase font-weight-bold"
-                                        href=""><?php echo mb_substr(($item['n_title']), 0, 60, 'UTF-8') . '...'; ?></a>
+                                        href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo mb_substr(($item['n_title']), 0, 60, 'UTF-8') . '...'; ?></a>
                                                 
                                           <?php } else { ?>
                                             <a class="h6 d-block mb-3 text-secondary text-uppercase font-weight-bold"
-                                        href=""><?php echo $item['n_title']; ?></a>
+                                        href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo $item['n_title']; ?></a>
                                                 
                                            <?php } ?>
 
@@ -310,85 +310,7 @@
                     </div>
                     <!-- Ads End -->
 
-                    <!-- Popular News Start -->
-                    <div class="mb-3">
-                        <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Tranding News</h4>
-                        </div>
-                        <div class="bg-white border border-top-0 p-3">
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid"
-                                    src="<?php echo base_url('public/user/'); ?>img/news-110x110-1.jpg" alt="">
-                                <div
-                                    class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
-                                            href="">Business</a>
-                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                                    </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
-                                        dolor sit amet elit...</a>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid"
-                                    src="<?php echo base_url('public/user/'); ?>img/news-110x110-2.jpg" alt="">
-                                <div
-                                    class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
-                                            href="">Business</a>
-                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                                    </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
-                                        dolor sit amet elit...</a>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid"
-                                    src="<?php echo base_url('public/user/'); ?>img/news-110x110-3.jpg" alt="">
-                                <div
-                                    class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
-                                            href="">Business</a>
-                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                                    </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
-                                        dolor sit amet elit...</a>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid"
-                                    src="<?php echo base_url('public/user/'); ?>img/news-110x110-4.jpg" alt="">
-                                <div
-                                    class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
-                                            href="">Business</a>
-                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                                    </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
-                                        dolor sit amet elit...</a>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid"
-                                    src="<?php echo base_url('public/user/'); ?>img/news-110x110-5.jpg" alt="">
-                                <div
-                                    class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
-                                            href="">Business</a>
-                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                                    </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
-                                        dolor sit amet elit...</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Popular News End -->
+            
 
                     <!-- Newsletter Start -->
                     <div class="mb-3">
@@ -398,12 +320,33 @@
                         <div class="bg-white text-center border border-top-0 p-3">
                             <p>Aliqu justo et labore at eirmod justo sea erat diam dolor diam vero kasd</p>
                             <div class="input-group mb-2" style="width: 100%;">
-                                <input type="text" class="form-control form-control-lg" placeholder="Your Email">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary font-weight-bold px-3">Sign Up</button>
-                                </div>
+                                <form action="<?php echo base_url('send_message'); ?>" method="post">
+                                    <input name="email" type="text" class="form-control form-control-lg" placeholder="Your Email" style="width:200px;float:left">
+                                    <div class="input-group-append" style="float:left;height:48px">
+                                        <button type="submit" class="btn btn-primary font-weight-bold px-3">göndər</button>
+                                    </div>
+                                </form>
+
+                                <?php if($this->session->flashdata('err')){ ?>
+                                    <br>
+                                   
+                                    <div class="alert alert-danger alert-dismissible" style="width: 293px;">
+                                        <small><?php echo $this->session->flashdata('err'); ?></small>
+                                    </div>
+                                 
+                                <?php } ?>
+
+                                <?php if($this->session->flashdata('ela')){ ?>
+                                    <br>
+                                   
+                                    <div class="alert alert-success alert-dismissible" style="width: 293px;">
+                                        <small><?php echo $this->session->flashdata('ela'); ?></small>
+                                    </div>
+                                 
+                                <?php } ?>
+
                             </div>
-                            <small>Lorem ipsum dolor sit amet elit</small>
+                            
                         </div>
                     </div>
                     <!-- Newsletter End -->
@@ -411,20 +354,15 @@
                     <!-- Tags Start -->
                     <div class="mb-3">
                         <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Tags</h4>
+                            <h4 class="m-0 text-uppercase font-weight-bold">CATEGORY</h4>
                         </div>
                         <div class="bg-white border border-top-0 p-3">
                             <div class="d-flex flex-wrap m-n1">
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Corporate</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Health</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Education</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Science</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Foods</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
+                                <?php foreach($category as $item){ ?>
+                                    <a href="" class="btn btn-sm btn-outline-secondary m-1"><?php echo $item['c_name'] ?></a>
+                                <?php } ?>
+                                
+                                
                             </div>
                         </div>
                     </div>

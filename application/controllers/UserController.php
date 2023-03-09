@@ -18,25 +18,25 @@ class UserController extends CI_Controller{
          
         $data['idman'] = $this->db
             ->where('n_category', '1')
-            ->order_by('n_id','DESC')
+            ->order_by('n_date','DESC') 
             ->join('category', 'category.c_id = news.n_category','left')
             ->get('news')->row_array();
 
         $data['medeniyyet'] = $this->db
             ->where('n_category', '2')
-            ->order_by('n_id','DESC')
+            ->order_by('n_date','DESC') 
             ->join('category', 'category.c_id = news.n_category','left')
             ->get('news')->row_array();
 
         $data['biznes'] = $this->db
             ->where('n_category', '3')
-            ->order_by('n_id','DESC')
+            ->order_by('n_date','DESC') 
             ->join('category', 'category.c_id = news.n_category','left')
             ->get('news')->row_array();
 
         $data['texnologiya'] = $this->db
             ->where('n_category', '4')
-            ->order_by('n_id','DESC')
+            ->order_by('n_date','DESC') 
             ->join('category', 'category.c_id = news.n_category','left')
             ->get('news')->row_array();
 
@@ -50,8 +50,29 @@ class UserController extends CI_Controller{
         $this->load->view('user/index',$data);
     }
 
-    public function category(){
-        $this->load->view('user/category');
+    public function category($id){
+        $data['category_of'] = $this->db
+        ->order_by('n_date','DESC') 
+        ->where('n_category',$id)
+        ->join('category', 'category.c_id = news.n_category','left')
+        ->get('news')->result_array();
+        
+        
+        $data['category'] = $this->db->where('c_id',$id)->get('category')->row_array();
+        
+        if($data['category']){
+            $this->load->view('user/category',$data);
+        }else{
+            redirect(base_url('index'));
+        }
+
+        // $data['test'] = $this->db->query('SELECT * FROM `news` WHERE n_id = '.$id)->result_array();
+
+        // print_r('<pre>');
+        // print_r($data['test']);
+        // die();
+        
+        
     }
 
     public function contact(){

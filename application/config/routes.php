@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'UserController';
 $route['index']     = 'UserController/index';
-$route['category']  = 'UserController/category';
+$route['category/(.*)']  = 'UserController/category/$1';
 $route['contact']   = 'UserController/contact';
 $route['single/(.*)']    = 'UserController/single/$1';
 $route['send_message'] = 'UserController/send_message';

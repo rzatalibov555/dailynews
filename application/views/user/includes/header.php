@@ -1,4 +1,15 @@
 <!-- Topbar Start -->
+
+<?php 
+
+    $category = $this->db->get('category')->result_array();
+
+// print_r("<pre>");
+// print_r($category);
+
+?>
+
+
 <div class="container-fluid d-none d-lg-block">
         <div class="row align-items-center bg-dark px-lg-5">
             <div class="col-lg-9">
@@ -70,8 +81,13 @@
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
                     <a href="<?php echo base_url('index'); ?>" class="nav-item nav-link active">Home</a>
-                    <a href="<?php echo base_url('category'); ?>" class="nav-item nav-link">Category</a>
-                    <a href="<?php echo base_url('single'); ?>" class="nav-item nav-link">Single News</a>
+                    
+                    <?php foreach($category as $item){ ?>
+                        <a href="<?php echo base_url('category/'.$item['c_id']); ?>" class="nav-item nav-link"><?php echo $item['c_name']; ?></a>
+                    <?php } ?>
+                    
+                    
+                    
                     <!-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
                         <div class="dropdown-menu rounded-0 m-0">

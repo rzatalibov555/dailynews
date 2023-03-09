@@ -199,13 +199,15 @@
 
                                         <?php if (strlen($item['n_title']) > 60) { ?>
                                             <a class="h6 d-block mb-3 text-secondary text-uppercase font-weight-bold"
-                                        href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo mb_substr(($item['n_title']), 0, 60, 'UTF-8') . '...'; ?></a>
+                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo mb_substr(($item['n_title']), 0, 60, 'UTF-8') . '...'; ?>
+                                            </a>
                                                 
-                                          <?php } else { ?>
+                                        <?php } else { ?>
                                             <a class="h6 d-block mb-3 text-secondary text-uppercase font-weight-bold"
-                                        href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo $item['n_title']; ?></a>
+                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo $item['n_title']; ?>
+                                            </a>
                                                 
-                                           <?php } ?>
+                                        <?php } ?>
 
 
 

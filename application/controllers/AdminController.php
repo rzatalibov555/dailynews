@@ -27,6 +27,8 @@ class AdminController extends CI_Controller{
                 'a_status'   => "Active",
             ];
 
+            $data = $this->security->xss_clean($data);
+            
             $check_admin = $this->db->where($data)->get('admin')->row_array();
            
             if($check_admin){
@@ -155,11 +157,14 @@ class AdminController extends CI_Controller{
                     'n_status'      => $status,
                     'n_file'        => $upload_name,
                     'n_file_ext'    => $upload_ext,
+                    // 'n_status'      => "Deactive",
                     'n_creator_id'  => $_SESSION['admin_id'],
                     'n_create_date' => date("Y-m-d H:i:s"),
                 ];
                 
                 // STEP4 = insert values to database
+
+                $data = $this->security->xss_clean($data);
                 $this->db->insert('news', $data);
 
                 // STEP5 = redirect pago to list method
@@ -175,11 +180,14 @@ class AdminController extends CI_Controller{
                     'n_status'      => $status,
                     // 'n_file'        => $upload_name,
                     // 'n_file_ext'    => $upload_ext,
+                    // 'n_status'      => "Deactive",
                     'n_creator_id'  => $_SESSION['admin_id'],
                     'n_create_date' => date("Y-m-d H:i:s"),
                 ];
                 
                 // STEP4 = insert values to database
+
+                $data = $this->security->xss_clean($data);
                 $this->db->insert('news', $data);
 
                 // STEP5 = redirect pago to list method
@@ -194,13 +202,15 @@ class AdminController extends CI_Controller{
 
     public function delete_news($id){
 
+        $id = $this->security->xss_clean($id);
+
         $this->db->where('n_id', $id)->delete('news');
         redirect(base_url('a_news_list'));
 
     }
 
     public function update_news($id){
-
+        $id = $this->security->xss_clean($id);
         // bu function id-sine gore lazimi secilmiw xeberin ayrica getirilmesi ucundur.
 
         $data['category'] = $this->db->get('category')->result_array();
@@ -217,6 +227,8 @@ class AdminController extends CI_Controller{
 
     public function update_newsAct($id){
         // STEP1 = get all input names
+
+        $id = $this->security->xss_clean($id);
 
         $title      = $_POST['title'];
         $descr      = $_POST['description'];
@@ -260,6 +272,8 @@ class AdminController extends CI_Controller{
                     'n_update_date' => date("Y-m-d H:i:s"),
                 ];
                 
+                $data = $this->security->xss_clean($data);
+
                 // STEP4 = update values with id to database
                 $this->db->where('n_id', $id)->update('news', $data);
 
@@ -281,6 +295,9 @@ class AdminController extends CI_Controller{
                 ];
                 
                 // STEP4 = value values with id to database
+                
+                $data = $this->security->xss_clean($data);
+
                 $this->db->where('n_id', $id)->update('news', $data);
 
                 // STEP5 = redirect pago to list method
@@ -296,6 +313,9 @@ class AdminController extends CI_Controller{
     }
 
     public function view_news($id){
+
+        $id = $this->security->xss_clean($id);
+        
         $data['single_news'] = $this->db
             ->where('n_id',$id)
             ->join('category','category.c_id = news.n_category' , 'left')

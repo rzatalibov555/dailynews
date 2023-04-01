@@ -2,6 +2,11 @@
 
 class UserController extends CI_Controller{
 
+    public function __constract(){
+        parent::__constract();
+        $this->lang->load('message','az');
+    }
+
     public function index(){
         $data['slider_left_side'] = $this->db
             ->limit(10)

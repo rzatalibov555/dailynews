@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="section-title">
-                                <h4 class="m-0 text-uppercase font-weight-bold">Category: <?php echo $category['c_name']; ?></h4>
+                                <h4 class="m-0 text-uppercase font-weight-bold">Category: <?php echo $category['c_name_az']; ?></h4>
                             </div>
                         </div>
                         
@@ -33,19 +33,19 @@
                                     <img class="img-fluid myImg" src="<?php echo base_url("uploads/news/".$item['n_file']); ?>" alt="">
                                     <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                         <div class="mb-2">
-                                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?php echo $item['c_name']; ?></a>
+                                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?php echo $item['c_name_az']; ?></a>
                                             <a class="text-body" href=""><small><?php echo date("M d, Y", strtotime($item['n_date'])); ?></small></a>
                                         </div>
                                       
 
-                                        <?php if (strlen($item['n_title']) > 60) { ?>
+                                        <?php if (strlen($item['n_title_'.$this->session->userdata('site_lang')]) > 60) { ?>
                                             <a class="h6 m-0 text-secondary text-uppercase font-weight-bold"
-                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo mb_substr(($item['n_title']), 0, 60, 'UTF-8') . '...'; ?>
+                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo mb_substr(($item['n_title_'.$this->session->userdata('site_lang')]), 0, 60, 'UTF-8') . '...'; ?>
                                             </a>
                                                 
                                         <?php } else { ?>
                                             <a class="h6 m-0 text-secondary text-uppercase font-weight-bold"
-                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo $item['n_title']; ?>
+                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo $item['n_title_'.$this->session->userdata('site_lang')]; ?>
                                             </a>
                                                 
                                         <?php } ?>
@@ -99,18 +99,18 @@
                                     <img class="img-fluid myImgSize" src="<?php echo base_url("uploads/news/".$item['n_file']); ?>" alt="">
                                     <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                         <div class="mb-2">
-                                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?php echo $item['c_name']; ?></a>
+                                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?php echo $item['c_name_az']; ?></a>
                                             <a class="text-body" href=""><small><?php echo date("M d, Y", strtotime($item['n_date'])); ?></small></a>
                                         </div>
 
-                                        <?php if (strlen($item['n_title']) > 40) { ?>
+                                        <?php if (strlen($item['n_title_'.$this->session->userdata('site_lang')]) > 40) { ?>
                                             <a class="h6 m-0 text-secondary text-uppercase font-weight-bold"
-                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo mb_substr(($item['n_title']), 0, 40, 'UTF-8') . '...'; ?>
+                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo mb_substr(($item['n_title_'.$this->session->userdata('site_lang')]), 0, 40, 'UTF-8') . '...'; ?>
                                             </a>
                                                 
                                         <?php } else { ?>
                                             <a class="h6 m-0 text-secondary text-uppercase font-weight-bold"
-                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo $item['n_title']; ?>
+                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo $item['n_title_'.$this->session->userdata('site_lang')]; ?>
                                             </a>
                                                 
                                         <?php } ?>
@@ -140,7 +140,7 @@
                             <div class="d-flex flex-wrap m-n1">
 
                                 <?php foreach($category_list as $item){ ?>
-                                    <a href="<?php echo base_url('category/'.$item['c_id']); ?>" class="btn btn-sm btn-outline-secondary m-1"><?php echo $item['c_name']; ?></a>
+                                    <a href="<?php echo base_url('category/'.$item['c_id']); ?>" class="btn btn-sm btn-outline-secondary m-1"><?php echo $item['c_name_az']; ?></a>
                                 <?php } ?>
                                 
                                 

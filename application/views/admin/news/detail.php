@@ -14,7 +14,7 @@
                 <div class="card">
                     <div class="d-flex align-items-end row">
                         <div class="col-sm-12">
-                            <h5 class="card-header"><?php echo $single_news['n_title']; ?>
+                            <h5 class="card-header"><?php echo $single_news['n_title_az']; ?>
                                 <a href="<?php echo base_url('a_news_list'); ?>">
                                     <button type="button" class="btn btn-info" style="float: right;">Back</button>
 
@@ -35,13 +35,34 @@
 
                                     <tbody>
                                         <tr>
-                                            <td style="width:100px">Title</td>
-                                            <td><?php echo $single_news['n_title']; ?></td>
+                                            <td style="width:150px">Title az</td>
+                                            <td><?php echo $single_news['n_title_az']; ?></td>
                                         </tr>
                                         <tr>
-                                            <td>Description</td>
-                                            <td><?php echo $single_news['n_description']; ?></td>
+                                            <td>Description az</td>
+                                            <td><?php echo $single_news['n_description_az']; ?></td>
                                         </tr>
+
+
+                                        <tr>
+                                            <td style="width:150px">Title en</td>
+                                            <td><?php echo $single_news['n_title_en']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Description en</td>
+                                            <td><?php echo $single_news['n_description_en']; ?></td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td style="width:150px">Title ru</td>
+                                            <td><?php echo $single_news['n_title_ru']; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Description ru</td>
+                                            <td><?php echo $single_news['n_description_ru']; ?></td>
+                                        </tr>
+
                                         <tr>
                                             <td>Date</td>
                                             <td><?php echo $single_news['n_date']; ?></td>

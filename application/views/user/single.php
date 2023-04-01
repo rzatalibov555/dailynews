@@ -11,14 +11,14 @@
                 <div class="col-12">
                     <div class="d-flex justify-content-between">
                         <div class="section-title border-right-0 mb-0" style="width: 180px;">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Tranding</h4>
+                            <h4 class="m-0 text-uppercase font-weight-bold"><?php echo $this->lang->line('tranding'); ?></h4>
                         </div>
                         <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center bg-white border border-left-0"
                             style="width: calc(100% - 180px); padding-right: 100px;">
                             <?php foreach($slider_left_side as $item){ ?>
                             <div class="text-truncate">
                                 <a class="text-uppercase font-weight-semi-bold" href="<?php echo base_url('single/'.$item['n_id']); ?>">
-                                    <?php echo $item['n_title']; ?>
+                                    <?php echo $item['n_title_'.$this->session->userdata('site_lang')]; ?>
                                 </a>
                             </div>
                             <?php } ?>
@@ -42,11 +42,11 @@
                         <div class="bg-white border border-top-0 p-4">
                             <div class="mb-3">
                                 <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                    href=""><?php echo $single_data['c_name'] ?></a>
+                                    href=""><?php echo $single_data['c_name_'.$this->session->userdata('site_lang')] ?></a>
                                 <a class="text-body" href=""><?php echo date('M d, Y', strtotime($single_data['n_date'])); ?></a>
                             </div>
-                            <h1 class="mb-3 text-secondary text-uppercase font-weight-bold"><?php echo $single_data['n_title']; ?></h1>
-                            <p><?php echo $single_data['n_title']; ?></p>
+                            <h1 class="mb-3 text-secondary text-uppercase font-weight-bold"><?php echo $single_data['n_title_'.$this->session->userdata('site_lang')]; ?></h1>
+                            <p><?php echo $single_data['n_description_'.$this->session->userdata('site_lang')]; ?></p>
                             
                         </div>
                         <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
@@ -178,18 +178,18 @@
                                     <img class="img-fluid myImgSize" src="<?php echo base_url("uploads/news/".$item['n_file']); ?>" alt="">
                                     <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                         <div class="mb-2">
-                                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?php echo $item['c_name']; ?></a>
+                                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?php echo $item['c_name_az']; ?></a>
                                             <a class="text-body" href=""><small><?php echo date("M d, Y", strtotime($item['n_date'])); ?></small></a>
                                         </div>
 
-                                        <?php if (strlen($item['n_title']) > 40) { ?>
+                                        <?php if (strlen($item['n_title_'.$this->session->userdata('site_lang')]) > 40) { ?>
                                             <a class="h6 m-0 text-secondary text-uppercase font-weight-bold"
-                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo mb_substr(($item['n_title']), 0, 40, 'UTF-8') . '...'; ?>
+                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo mb_substr(($item['n_title_'.$this->session->userdata('site_lang')]), 0, 40, 'UTF-8') . '...'; ?>
                                             </a>
                                                 
                                         <?php } else { ?>
                                             <a class="h6 m-0 text-secondary text-uppercase font-weight-bold"
-                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo $item['n_title']; ?>
+                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo $item['n_title_'.$this->session->userdata('site_lang')]; ?>
                                             </a>
                                                 
                                         <?php } ?>
@@ -214,7 +214,7 @@
                         <div class="bg-white border border-top-0 p-3">
                             <div class="d-flex flex-wrap m-n1">
                                 <?php foreach($category as $item){ ?>
-                                    <a href="<?php echo base_url('category/'.$item['c_id']); ?>" class="btn btn-sm btn-outline-secondary m-1"><?php echo $item['c_name']; ?></a>
+                                    <a href="<?php echo base_url('category/'.$item['c_id']); ?>" class="btn btn-sm btn-outline-secondary m-1"><?php echo $item['c_name_'.$this->session->userdata('site_lang')]; ?></a>
                                 <?php } ?>
                             </div>
                         </div>

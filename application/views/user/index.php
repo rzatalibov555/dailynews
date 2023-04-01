@@ -18,12 +18,12 @@
                         <div class="overlay">
                             <div class="mb-2">
                                 <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                    href=""><?php echo $left_slider['c_name']; ?></a>
+                                    href=""><?php echo $left_slider['c_name_'.$this->session->userdata('site_lang')]; ?></a>
                                 <a class="text-white"
                                     href=""><?php echo date("d-m-Y", strtotime($left_slider['n_date'])); ?></a>
                             </div>
                             <a class="h2 m-0 text-white text-uppercase font-weight-bold"
-                                href="<?php echo base_url('single/'.$left_slider['n_id']); ?>"><?php echo $left_slider['n_title']; ?></a>
+                                href="<?php echo base_url('single/'.$left_slider['n_id']); ?>"><?php echo $left_slider['n_title_'.$this->session->userdata('site_lang')]; ?></a>
                         </div>
                     </div>
                     <?php } ?>
@@ -42,12 +42,12 @@
                             <div class="overlay">
                                 <div class="mb-2">
                                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                        href=""><?php echo $idman['c_name']; ?></a>
+                                        href=""><?php echo $idman['c_name_'.$this->session->userdata('site_lang')]; ?></a>
                                     <a class="text-white"
                                         href=""><small><?php echo date("M d, Y", strtotime($idman['n_date'])); ?></small></a>
                                 </div>
                                 <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold"
-                                    href="<?php echo base_url('single/'.$idman['n_id']); ?>"><?php echo $idman['n_title']; ?></a>
+                                    href="<?php echo base_url('single/'.$idman['n_id']); ?>"><?php echo $idman['n_title_'.$this->session->userdata('site_lang')]; ?></a>
                             </div>
                         </div>
                     </div>
@@ -59,12 +59,12 @@
                             <div class="overlay">
                                 <div class="mb-2">
                                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                        href=""><?php echo $medeniyyet['c_name']; ?></a>
+                                        href=""><?php echo $medeniyyet['c_name_'.$this->session->userdata('site_lang')]; ?></a>
                                     <a class="text-white"
                                         href=""><small><?php echo date("M d, Y", strtotime($medeniyyet['n_date'])); ?></small></a>
                                 </div>
                                 <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold"
-                                    href="<?php echo base_url('single/'.$medeniyyet['n_id']); ?>"><?php echo $medeniyyet['n_title']; ?></a>
+                                    href="<?php echo base_url('single/'.$medeniyyet['n_id']); ?>"><?php echo $medeniyyet['n_title_'.$this->session->userdata('site_lang')]; ?></a>
                             </div>
                         </div>
                     </div>
@@ -76,12 +76,12 @@
                             <div class="overlay">
                                 <div class="mb-2">
                                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                        href=""><?php echo $biznes['c_name']; ?></a>
+                                        href=""><?php echo $biznes['c_name_'.$this->session->userdata('site_lang')]; ?></a>
                                     <a class="text-white"
                                         href=""><small><?php echo date("M d, Y", strtotime($biznes['n_date'])); ?></small></a>
                                 </div>
                                 <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold"
-                                    href="<?php echo base_url('single/'.$biznes['n_id']); ?>"><?php echo $biznes['n_title']; ?></a>
+                                    href="<?php echo base_url('single/'.$biznes['n_id']); ?>"><?php echo $biznes['n_title_'.$this->session->userdata('site_lang')]; ?></a>
                             </div>
                         </div>
                     </div>
@@ -93,12 +93,12 @@
                             <div class="overlay">
                                 <div class="mb-2">
                                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                        href=""><?php echo $texnologiya['c_name']; ?></a>
+                                        href=""><?php echo $texnologiya['c_name_'.$this->session->userdata('site_lang')]; ?></a>
                                     <a class="text-white"
                                         href=""><small><?php echo date("M d, Y", strtotime($texnologiya['n_date'])); ?></small></a>
                                 </div>
                                 <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold"
-                                    href="<?php echo base_url('single/'.$texnologiya['n_id']); ?>"><?php echo $texnologiya['n_title']; ?></a>
+                                    href="<?php echo base_url('single/'.$texnologiya['n_id']); ?>"><?php echo $texnologiya['n_title_'.$this->session->userdata('site_lang')]; ?></a>
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
 
                             <?php foreach($slider_left_side as $item){ ?>
                             <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold"
-                                    href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo $item['n_title']; ?></a></div>
+                                    href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo $item['n_title_'.$this->session->userdata('site_lang')]; ?></a></div>
                             <?php } ?>
 
                         </div>
@@ -150,12 +150,12 @@
                     <div class="overlay">
                         <div class="mb-2">
                             <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                href=""><?php echo $item['c_name']; ?></a>
+                                href=""><?php echo $item['c_name_'.$this->session->userdata('site_lang')]; ?></a>
                             <a class="text-white"
                                 href=""><small><?php echo date("M d, Y", strtotime($item['n_date'])); ?></small></a>
                         </div>
                         <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold"
-                            href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo $item['n_title']; ?></a>
+                            href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo $item['n_title_'.$this->session->userdata('site_lang')]; ?></a>
                     </div>
                 </div>
 
@@ -191,21 +191,21 @@
                                 <div class="bg-white border border-top-0 p-4">
                                     <div class="mb-2">
                                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                            href=""><?php echo $item['c_name']; ?></a>
+                                            href=""><?php echo $item['c_name_'.$this->session->userdata('site_lang')]; ?></a>
                                         <a class="text-body"
                                             href=""><small><?php echo date('M d, Y', strtotime($item['n_date'])); ?></small></a>
                                     </div>
                                     
 
 
-                                        <?php if (strlen($item['n_title']) > 60) { ?>
+                                        <?php if (strlen($item['n_title_'.$this->session->userdata('site_lang')]) > 60) { ?>
                                             <a class="h6 d-block mb-3 text-secondary text-uppercase font-weight-bold"
-                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo mb_substr(($item['n_title']), 0, 60, 'UTF-8') . '...'; ?>
+                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo mb_substr(($item['n_title_'.$this->session->userdata('site_lang')]), 0, 60, 'UTF-8') . '...'; ?>
                                             </a>
                                                 
                                         <?php } else { ?>
                                             <a class="h6 d-block mb-3 text-secondary text-uppercase font-weight-bold"
-                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo $item['n_title']; ?>
+                                                href="<?php echo base_url('single/'.$item['n_id']); ?>"><?php echo $item['n_title_'.$this->session->userdata('site_lang')]; ?>
                                             </a>
                                                 
                                         <?php } ?>
@@ -362,7 +362,7 @@
                         <div class="bg-white border border-top-0 p-3">
                             <div class="d-flex flex-wrap m-n1">
                                 <?php foreach($category as $item){ ?>
-                                    <a href="" class="btn btn-sm btn-outline-secondary m-1"><?php echo $item['c_name'] ?></a>
+                                    <a href="" class="btn btn-sm btn-outline-secondary m-1"><?php echo $item['c_name_'.$this->session->userdata('site_lang')] ?></a>
                                 <?php } ?>
                                 
                                 

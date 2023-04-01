@@ -80,10 +80,10 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
-                    <a href="<?php echo base_url('index'); ?>" class="nav-item nav-link active">Home</a>
+                    <a href="<?php echo base_url('index'); ?>" class="nav-item nav-link active"><?php echo $this->lang->line("home") ?></a>
                     
                     <?php foreach($category as $item){ ?>
-                        <a href="<?php echo base_url('category/'.$item['c_id']); ?>" class="nav-item nav-link"><?php echo $item['c_name']; ?></a>
+                        <a href="<?php echo base_url('category/'.$item['c_id']); ?>" class="nav-item nav-link"><?php echo $item['c_name_'.$this->session->userdata('site_lang')]; ?></a>
                     <?php } ?>
                     
                     
@@ -96,10 +96,19 @@
                             <a href="#" class="dropdown-item">Menu item 3</a>
                         </div>
                     </div> -->
-                    <a href="<?php echo base_url('contact'); ?>" class="nav-item nav-link">Contact</a>
+                    <a href="<?php echo base_url('contact'); ?>" class="nav-item nav-link"><?php echo $this->lang->line('contact'); ?></a>
                 </div>
+
+                
+
+
                 <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
-                    <input type="text" class="form-control border-0" placeholder="Keyword">
+                    <select style="margin-right:15px;" onchange="javascript:window.location.href='<?php echo base_url(); ?>LanguageSwitcher/switchLang/'+this.value;">
+                        <option value="az" <?php if($this->session->userdata('site_lang') == 'az') echo 'selected="selected"'; ?>>AZ</option>
+                        <option value="en" <?php if($this->session->userdata('site_lang') == 'en') echo 'selected="selected"'; ?>>EN</option>
+                        <option value="ru" <?php if($this->session->userdata('site_lang') == 'ru') echo 'selected="selected"'; ?>>RU</option>   
+                    </select>
+                    <input type="text" class="form-control border-0" placeholder="<?php echo $this->lang->line("search") ?>">
                     <div class="input-group-append">
                         <button class="input-group-text bg-primary text-dark border-0 px-3"><i
                                 class="fa fa-search"></i></button>

@@ -42,7 +42,7 @@
 
                                                     <tr>
                                                         <td><?php echo $sira; ?></td>
-                                                        <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong><?php echo $items->n_title; ?></strong></td>
+                                                        <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong><?php echo $items->n_title_az; ?></strong></td>
 <!--                                                        <td>--><?php //echo $items->n_description; ?><!--</td>-->
                                                         <td><?php echo $items->c_name; ?></td>
                                                         <td>

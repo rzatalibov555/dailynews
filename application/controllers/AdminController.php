@@ -98,7 +98,6 @@ class AdminController extends CI_Controller{
     // row()            - yalniz 1 setirin getirilmesi ucundur (object kimi)  ->
 
 
-
     public function news_list(){
         $data["get_all"] = $this->db
             ->join('category','category.c_id = news.n_category' , 'left')
@@ -106,9 +105,9 @@ class AdminController extends CI_Controller{
             ->order_by('n_id','DESC')
             ->get("news")->result();
 
-//        print_r('<pre>');
-//        print_r($data["get_all"]);
-//        die();
+        //        print_r('<pre>');
+        //        print_r($data["get_all"]);
+        //        die();
 
         $this->load->view('admin/news/list',$data);
     }
@@ -123,14 +122,21 @@ class AdminController extends CI_Controller{
 
         // STEP1 = get all input names
 
-        $title      = $_POST['title'];
-        $descr      = $_POST['description'];
+        $title_az   = $_POST['title_az'];
+        $descr_az   = $_POST['description_az'];
+
+        $title_en   = $_POST['title_en'];
+        $descr_en   = $_POST['description_en'];
+
+        $title_ru   = $_POST['title_ru'];
+        $descr_ru   = $_POST['description_ru'];
+
         $date       = $_POST['date'];
         $category   = $_POST['category'];
         $status     = $_POST['status'];
         
         // STEP2 = check input names value
-        if(!empty($title) && !empty($descr) && !empty($date) && !empty($category) && !empty($status)){
+        if(!empty($title_az) && !empty($descr_az) && !empty($date) && !empty($category) && !empty($status)){
 
             // https://codeigniter.com/userguide3/libraries/file_uploading.html
             // --------- FILE UPLOAD (File yuklenmesi) ----------------------------------------
@@ -150,8 +156,14 @@ class AdminController extends CI_Controller{
                 
                 // STEP3 = push all input values in array
                 $data = [
-                    'n_title'       => $title,
-                    'n_description' => $descr,
+                    'n_title_az'       => $title_az,
+                    'n_title_en'       => $title_en,
+                    'n_title_ru'       => $title_ru,
+
+                    'n_description_az' => $descr_az,
+                    'n_description_en' => $descr_en,
+                    'n_description_ru' => $descr_ru,
+
                     'n_date'        => $date,
                     'n_category'    => $category,
                     'n_status'      => $status,
@@ -173,8 +185,14 @@ class AdminController extends CI_Controller{
             }else{
                 
                 $data = [
-                    'n_title'       => $title,
-                    'n_description' => $descr,
+                    'n_title_az'       => $title_az,
+                    'n_title_en'       => $title_en,
+                    'n_title_ru'       => $title_ru,
+
+                    'n_description_az' => $descr_az,
+                    'n_description_en' => $descr_en,
+                    'n_description_ru' => $descr_ru,
+
                     'n_date'        => $date,
                     'n_category'    => $category,
                     'n_status'      => $status,
@@ -230,14 +248,21 @@ class AdminController extends CI_Controller{
 
         $id = $this->security->xss_clean($id);
 
-        $title      = $_POST['title'];
-        $descr      = $_POST['description'];
+        $title_az   = $_POST['title_az'];
+        $descr_az   = $_POST['description_az'];
+
+        $title_en   = $_POST['title_en'];
+        $descr_en   = $_POST['description_en'];
+
+        $title_ru   = $_POST['title_ru'];
+        $descr_ru   = $_POST['description_ru'];
+        
         $date       = $_POST['date'];
         $category   = $_POST['category'];
         $status     = $_POST['status'];
 
 
-        if(!empty($title) && !empty($descr) && !empty($date) && !empty($category) && !empty($status)){
+        if(!empty($title_az) && !empty($descr_az) && !empty($date) && !empty($category) && !empty($status)){
 
 
             // https://codeigniter.com/userguide3/libraries/file_uploading.html
@@ -261,8 +286,14 @@ class AdminController extends CI_Controller{
                 
                 // STEP3 = push all input values in array
                 $data = [
-                    'n_title'       => $title,
-                    'n_description' => $descr,
+                    'n_title_az'       => $title_az,
+                    'n_title_en'       => $title_en,
+                    'n_title_ru'       => $title_ru,
+
+                    'n_description_az' => $descr_az,
+                    'n_description_en' => $descr_en,
+                    'n_description_ru' => $descr_ru,
+
                     'n_date'        => $date,
                     'n_category'    => $category,
                     'n_status'      => $status,
@@ -283,8 +314,15 @@ class AdminController extends CI_Controller{
             }else{
 
                 $data = [
-                    'n_title'       => $title,
-                    'n_description' => $descr,
+                    
+                    'n_title_az'       => $title_az,
+                    'n_title_en'       => $title_en,
+                    'n_title_ru'       => $title_ru,
+
+                    'n_description_az' => $descr_az,
+                    'n_description_en' => $descr_en,
+                    'n_description_ru' => $descr_ru,
+
                     'n_date'        => $date,
                     'n_category'    => $category,
                     'n_status'      => $status,

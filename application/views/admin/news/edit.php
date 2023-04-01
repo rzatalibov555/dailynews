@@ -27,12 +27,33 @@
                                 <h1>Edit</h1>
                                 <form action="<?php echo base_url('a_news_update_act/'.$single_news->n_id); ?>" method="post" enctype="multipart/form-data">
 
-                                    <label for="title">Title</label>
-                                    <input name="title" type="text" id="title" class="form-control" placeholder="Enter title" value="<?php echo $single_news->n_title; ?>">
+                                    <!-- ============================= AZ ================================================= -->
+                                    <label for="title_az">Title az</label>
+                                    <input name="title_az" type="text" id="title_az" class="form-control" placeholder="Enter title" value='<?php echo $single_news->n_title_az; ?>'>
                                     <br>
-                                    <label for="desc">Description</label>
-                                    <textarea name="description" id="desc" cols="30" rows="10" class="form-control" placeholder="Enter description"><?php echo $single_news->n_description; ?></textarea>
+                                    <label for="desc_az">Description az</label>
+                                    <textarea name="description_az" id="desc_az" cols="30" rows="10" class="form-control" placeholder="Enter description"><?php echo $single_news->n_description_az; ?></textarea>
                                     <br>
+                                    <!-- ============================================================================== -->
+
+                                    <!-- ============================= EN ================================================= -->
+                                    <label for="title_en">Title en</label>
+                                    <input name="title_en" type="text" id="title_en" class="form-control" placeholder="Enter title" value='<?php echo $single_news->n_title_en; ?>'>
+                                    <br>
+                                    <label for="desc_en">Description en</label>
+                                    <textarea name="description_en" id="desc_en" cols="30" rows="10" class="form-control" placeholder="Enter description"><?php echo $single_news->n_description_en; ?></textarea>
+                                    <br>
+                                    <!-- ============================================================================== -->
+
+                                    <!-- ============================= RU ================================================= -->
+                                    <label for="title_ru">Title ru</label>
+                                    <input name="title_ru" type="text" id="title_ru" class="form-control" placeholder="Enter title" value='<?php echo $single_news->n_title_ru; ?>'>
+                                    <br>
+                                    <label for="desc_ru">Description ru</label>
+                                    <textarea name="description_ru" id="desc_ru" cols="30" rows="10" class="form-control" placeholder="Enter description"><?php echo $single_news->n_description_ru; ?></textarea>
+                                    <br>
+                                    <!-- ============================================================================== -->
+
 
                                     <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 fLeft mt-2 me-2">
                                         <label for="date">Date</label>

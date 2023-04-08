@@ -26,6 +26,7 @@
                                                     <th>Title</th>
 <!--                                                    <th>Description</th>-->
                                                     <th>Category</th>
+                                                    <th>Page</th>
                                                     <th>Date</th>
                                                     <th>Image</th>
                                                     <th>Status</th>
@@ -44,7 +45,8 @@
                                                         <td><?php echo $sira; ?></td>
                                                         <td><i class="fab fa-react fa-lg text-info me-3"></i> <strong><?php echo $items->n_title_az; ?></strong></td>
 <!--                                                        <td>--><?php //echo $items->n_description; ?><!--</td>-->
-                                                        <td><?php echo $items->c_name; ?></td>
+                                                        <td><?php echo $items->c_name_az; ?></td>
+                                                        <td><?php echo $items->n_page; ?></td>
                                                         <td>
                                                             <?php echo date("d-m-Y H:i", strtotime($items->n_date)); ?>
                                                         </td>

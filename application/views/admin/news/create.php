@@ -71,13 +71,23 @@
 
                                             <?php
                                             foreach ($category as $item) { ?>
-                                                <option value="<?php echo $item['c_id']; ?>"><?php echo $item['c_name']; ?></option>
+                                                <option value="<?php echo $item['c_id']; ?>"><?php echo $item['c_name_az']; ?></option>
                                             <?php } ?>
 
                                         </select>
                                     </div>
 
-                                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 fLeft mt-2 me-2">
+
+                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 fLeft mt-2 me-2">
+                                        <label for="page">Page</label>
+                                        <select name="page" id="page" class="form-control">
+                                            <option value="">-SELECT-</option>
+                                            <option value="News">News</option>
+                                            <option value="Events">Events</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 fLeft mt-2 me-2">
                                         <label for="status">Status</label>
                                         <select name="status" id="status" class="form-control">
                                             <option value="">-SELECT-</option>
@@ -85,8 +95,9 @@
                                             <option value="Deactive">Deactive</option>
                                         </select>
                                     </div>
+                                    
 
-                                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 fLeft mt-2">
+                                    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 fLeft mt-2">
                                         <label for="img">Image</label>
                                         <input name="image" type="file" id="img" class="form-control">
                                     </div>

@@ -12,6 +12,7 @@ class UserController extends CI_Controller{
             ->limit(10)
             ->order_by('n_date','DESC')
             ->where('n_status',"Active")
+            ->where('n_page',"Events")
             ->join('category', 'category.c_id = news.n_category','left')
             ->get('news')->result_array();
 
@@ -19,12 +20,14 @@ class UserController extends CI_Controller{
             ->limit(10,10)
             ->order_by('n_date','DESC') 
             ->where('n_status',"Active")
+            ->where('n_page',"news")
             ->join('category', 'category.c_id = news.n_category','left')
             ->join('admin', 'admin.a_id = news.n_creator_id','left')
             ->get('news')->result_array();
          
         $data['idman'] = $this->db
             ->where('n_category', '1')
+            ->where('n_page',"news")
             ->order_by('n_date','DESC')
             ->where('n_status',"Active")
             ->join('category', 'category.c_id = news.n_category','left')
@@ -32,6 +35,7 @@ class UserController extends CI_Controller{
 
         $data['medeniyyet'] = $this->db
             ->where('n_category', '2')
+            ->where('n_page',"news")
             ->order_by('n_date','DESC') 
             ->where('n_status',"Active")
             ->join('category', 'category.c_id = news.n_category','left')
@@ -39,6 +43,7 @@ class UserController extends CI_Controller{
 
         $data['biznes'] = $this->db
             ->where('n_category', '3')
+            ->where('n_page',"news")
             ->order_by('n_date','DESC') 
             ->where('n_status',"Active")
             ->join('category', 'category.c_id = news.n_category','left')
@@ -46,6 +51,7 @@ class UserController extends CI_Controller{
 
         $data['texnologiya'] = $this->db
             ->where('n_category', '4')
+            ->where('n_page',"news")
             ->order_by('n_date','DESC')
             ->where('n_status',"Active")
             ->join('category', 'category.c_id = news.n_category','left')

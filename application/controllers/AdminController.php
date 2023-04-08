@@ -133,6 +133,7 @@ class AdminController extends CI_Controller{
 
         $date       = $_POST['date'];
         $category   = $_POST['category'];
+        $page   = $_POST['page'];
         $status     = $_POST['status'];
         
         // STEP2 = check input names value
@@ -166,6 +167,7 @@ class AdminController extends CI_Controller{
 
                     'n_date'        => $date,
                     'n_category'    => $category,
+                    'n_page'        => $page,
                     'n_status'      => $status,
                     'n_file'        => $upload_name,
                     'n_file_ext'    => $upload_ext,
@@ -195,6 +197,7 @@ class AdminController extends CI_Controller{
 
                     'n_date'        => $date,
                     'n_category'    => $category,
+                    'n_page'        => $page,
                     'n_status'      => $status,
                     // 'n_file'        => $upload_name,
                     // 'n_file_ext'    => $upload_ext,
